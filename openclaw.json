@@ -1,0 +1,116 @@
+{
+  "meta": {
+    "lastTouchedVersion": "2026.2.9",
+    "lastTouchedAt": "2026-02-10T04:50:51.302Z"
+  },
+  "wizard": {
+    "lastRunAt": "2026-02-10T04:50:51.298Z",
+    "lastRunVersion": "2026.2.9",
+    "lastRunCommand": "onboard",
+    "lastRunMode": "local"
+  },
+  "models": {
+    "providers": {
+      "tokenpony": {
+        "baseUrl": "https://api.tokenpony.cn/v1",
+        "apiKey": "Your TokenPony API KEY",
+        "api": "openai-completions",
+        "models": [
+          {
+            "id": "deepseek-v3.1-terminus",
+            "name": "deepseek-v3.1-terminus",
+            "reasoning": false,
+            "input": [
+              "text"
+            ],
+            "cost": {
+              "input": 0,
+              "output": 0,
+              "cacheRead": 0,
+              "cacheWrite": 0
+            },
+            "contextWindow": 128000,
+            "maxTokens": 8192
+          },
+          {
+            "id": "qwen3-vl-235b-a22b-instruct",
+            "name": "qwen3-vl-235b-a22b-instruct",
+            "reasoning": false,
+            "input": [
+              "text",
+              "image"
+            ],
+            "cost": {
+              "input": 0,
+              "output": 0,
+              "cacheRead": 0,
+              "cacheWrite": 0
+            },
+            "contextWindow": 128000,
+            "maxTokens": 8192
+          }
+        ]
+      }
+    }
+  },
+  "agents": {
+    "defaults": {
+      "model": {
+        "primary": "tokenpony/deepseek-v3.1-terminus"
+      },
+      "models": {
+        "tokenpony/deepseek-v3.1-terminus": {
+          "alias": "qwen"
+        },
+        "tokenpony/qwen3-vl-235b-a22b-instruct": {}
+      },
+      "workspace": "/home/node/.openclaw/workspace",
+      "compaction": {
+        "mode": "safeguard"
+      },
+      "maxConcurrent": 4,
+      "subagents": {
+        "maxConcurrent": 8
+      }
+    }
+  },
+  "messages": {
+    "ackReactionScope": "group-mentions"
+  },
+  "commands": {
+    "native": "auto",
+    "nativeSkills": "auto"
+  },
+  "gateway": {
+    "port": 18889,
+    "mode": "local",
+    "bind": "loopback",
+     "controlUi": {
+       "enabled": true,
+       "allowInsecureAuth": true
+     },
+    "auth": {
+      "mode": "token",
+      "token": "6a44596d342bebf38363591872e12c3b1427785356d631ab"
+    },
+    "tailscale": {
+      "mode": "off",
+      "resetOnExit": false
+    },
+    "nodes": {
+      "denyCommands": [
+        "camera.snap",
+        "camera.clip",
+        "screen.record",
+        "calendar.add",
+        "contacts.add",
+        "reminders.add"
+      ]
+    }
+  },
+  "skills": {
+    "install": {
+      "nodeManager": "pnpm"
+    }
+  }
+}

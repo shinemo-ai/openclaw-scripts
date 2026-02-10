@@ -34,7 +34,7 @@ chmod +x ./set_up.sh ./start.sh ./openclaw-cli.sh
 示例（仅示意）：
 
 ```bash
-export OPENCLAW_IMAGE="openclaw:local"
+export OPENCLAW_IMAGE="openclaw:swr.cn-east-3.myhuaweicloud.com/shinemo-model/openclaw:v1.0.1"
 ```
 
 ### 1) 准备认证信息（按需）

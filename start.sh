@@ -4,7 +4,7 @@ set -euo pipefail
 ROOT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
 COMPOSE_FILE="$ROOT_DIR/docker-compose.yml"
 EXTRA_COMPOSE_FILE="$ROOT_DIR/docker-compose.extra.yml"
-IMAGE_NAME="${OPENCLAW_IMAGE:-swr.cn-east-3.myhuaweicloud.com/shinemo-model/openclaw:v1.0.1}"
+IMAGE_NAME="${OPENCLAW_IMAGE:-swr.cn-east-3.myhuaweicloud.com/shinemo-model/openclaw:v1.0.3}"
 EXTRA_MOUNTS="${OPENCLAW_EXTRA_MOUNTS:-}"
 HOME_VOLUME_NAME="${OPENCLAW_HOME_VOLUME:-}"
 
